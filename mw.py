@@ -22,7 +22,7 @@ for tr in translations:
     for t in tr:
       print("! {0}".format(t[1:].strip()), file=f)
   else:
-    tr[-1] = "'''{0}'''".format(tr[-1].strip())
+    tr[-1] = "''{0}''".format(tr[-1].strip())
     for t in tr:
       print("| {0}".format(t.strip()), file=f)
 
