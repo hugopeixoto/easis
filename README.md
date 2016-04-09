@@ -7,20 +7,20 @@ Os cabecalhos devem ser prefixados de um cardinal. Deve haver uma linha vazia en
 
 Exemplo:
 
-  #Moveis d'uma casa
-  O armario
-  O bufete
-  O escritorio
+    #Moveis d'uma casa
+    O armario
+    O bufete
+    O escritorio
 
-  #House hold goods
-  The clothes-press
-  The set of plate
-  The bureau
+    #House hold goods
+    The clothes-press
+    The set of plate
+    The bureau
 
-  #Hau-ce hold gud'-ze
-  Thi klothes-press
-  Thi set ov plete
-  Thi biuro
+    #Hau-ce hold gud'-ze
+    Thi klothes-press
+    Thi set ov plete
+    Thi biuro
 
 Se uma pagina a traduzir contiver mais do que uma tabela, criar um ficheiro por tabela.
 
