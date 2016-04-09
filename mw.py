@@ -4,20 +4,26 @@ import sys
 lines = open(sys.argv[1]).readlines()
 f = open(sys.argv[1] + ".mw", "w")
 
-#indices = [i for i, x in enumerate(lines) if x == "\n"]
+indices = [i for i, x in enumerate(lines) if x == "\n"]
+
+cols = len(indices) + 1
 
 n = lines.index("\n")
 
-a = (lines[0:n])
-b = (lines[n+1:n*2+1])
-c = (lines[2*n+2:n*3+2])
+translations = zip(*[ lines[i*(n+1):i*(n+1)+n] for i in range(0, cols)])
 
-print("{|", file=f)
-for pt, en, ph in zip(a, b, c):
+print("{| style=\"width: 100%\"", file=f)
+for tr in translations:
+  tr = list(tr)
   print("|-", file=f)
-  if pt[0] == "#":
-    print("! {0} !! {1} !! ''{2}''".format(pt[1:].strip(), en[1:].strip(), ph[1:].strip()), file=f)
+
+
+  if tr[0][0] == '#':
+    for t in tr:
+      print("! {0}".format(t[1:].strip()), file=f)
   else:
-    print("| {0} || {1} || ''{2}''".format(pt.strip(), en.strip(), ph.strip()), file=f)
+    tr[-1] = "'''{0}'''".format(tr[-1].strip())
+    for t in tr:
+      print("| {0}".format(t.strip()), file=f)
 
 print("|}", file=f)
